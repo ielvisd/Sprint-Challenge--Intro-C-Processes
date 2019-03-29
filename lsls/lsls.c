@@ -18,7 +18,7 @@ int main(int argc, char **argv)
     DIR *dir = opendir(argv[i]);
     struct dirent *entry;
 
-    if ((dir = opendir("/")) == NULL)
+    if (dir == NULL)
       perror("opendir() error");
     else
     {
