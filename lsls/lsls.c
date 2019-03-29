@@ -16,14 +16,15 @@ int main(int argc, char **argv)
 
   printf("There are %d command line argument(s):\n", argc);
 
-  for (i = 0; i < argc; i++)
+  for (i = 1; i < (argc); i++)
   {
     // Open directory
     DIR *dir = opendir(argv[i]);
     struct dirent *entry;
 
-    if (dir == NULL)
+    if (dir == NULL) {
       perror("opendir() error");
+    }
     else
     {
       // Repeatly read and print entries
